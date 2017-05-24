@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../untitled/.idea/modules/RxJava Kotlin.iml" filepath="$PROJECT_DIR$/../untitled/.idea/modules/RxJava Kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RxJava Sandbox.iml" filepath="$PROJECT_DIR$/.idea/modules/RxJava Sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RxJava_Kotlin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RxJava_Kotlin_main.iml" group="RxJava Kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RxJava_Kotlin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RxJava_Kotlin_test.iml" group="RxJava Kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RxJava_Sandbox_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RxJava_Sandbox_main.iml" group="RxJava Sandbox" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RxJava_Sandbox_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RxJava_Sandbox_test.iml" group="RxJava Sandbox" />
+    </modules>
+  </component>
+</project>
