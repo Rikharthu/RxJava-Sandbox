@@ -1,9 +1,6 @@
 package com.uberv.example;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
@@ -12,18 +9,24 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Random rnd = new Random();
 
-        Observable<Integer> o = Observable.create(emitter -> {
-            int a;
-            while (true) {
-                a = rnd.nextInt();
-                emitter.onNext(a);
+        MyEventBus eventsBus = new MyEventBus();
+        eventsBus.subscribe(new Consumer<MyEvent>() {
+            @Override
+            public void accept(MyEvent myEvent) throws Exception {
+                System.out.println("Received Event of type " + myEvent.getClass().getSimpleName());
+                if (myEvent instanceof OnNewIntegerEvent) {
+                    OnNewIntegerEvent onNewIntEvent = (OnNewIntegerEvent) myEvent;
+                    System.out.println("OnNewIntegerEvent : " + onNewIntEvent.getValue());
+                }
             }
         });
 
-        Observable<Integer> sampler = o.sample(500, TimeUnit.MILLISECONDS);
-        Disposable sampling = sampler.subscribe(integer -> System.out.println(integer));
+        while (true) {
+            eventsBus.post(new OnNewIntegerEvent(rnd.nextInt()));
+            Thread.sleep(300);
+        }
     }
 }
